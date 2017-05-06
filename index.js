@@ -10,11 +10,11 @@ app.get('/', function (req, res) {
     res.send('inavlid request, missing input value');
     return;
   }
-  input = '/crfasrnn/python-scripts/Images/input/'+input;
+  input = '/home/ubuntu/crfasrnn/python-scripts/Images/input/'+input;
   var output = input.replace('input', 'output').replace('jpg','png');
 
 
-  var cmd = `/crfasrnn/python-scripts/crfasrnn_demo.py -i ${input} -o ${output} -g 0`;
+  var cmd = `/home/ubuntu/crfasrnn/python-scripts/crfasrnn_demo.py -i ${input} -o ${output} -g 0`;
 
   exec(cmd, function(error, stdout, stderr) {
     if (error) {
